@@ -5,34 +5,29 @@
   {% block content %}
 
     <div id="header">
-
       <img src="{{       url_for ('static', filename='logo.svg')      }}" id="logo" />
       <h1>Welcome!</h1>
       <em>BURGERS &bull; DRINKS &bull; FRIES</em>
-      <p>
-        <a class="btn-yellow" href="{{ url_for('order') }}">order now</a>
-      </p>
-
+      <p> <a class="btn-yellow" href="{{ url_for('order') }}">order now</a> </p>
     </div>
 
     <div id="menu">
-
       <h1>Menu</h1>
+        <div>
+          <h2>Burgers</h2>
+          <ol class="menu-items">
 
-      <div>
-        <h2>Burgers</h2>
-        <ol class="menu-items">
-          {%for burger in burgers%}
-        <li>  {{burger[0]}} <span class="price">{{burger[1]}}</span> </li>
-          {% endfor %}
-          <!--
-          <li>Classic Burger <span class="price">$4.99</span></li>
-          <li>Cheese Burger <span class="price">$5.99</span></li>
-          <li>Chicken Burger <span class="price">$5.99</span></li>
-          <li>Double Burger <span class="price">$6.99</span></li>
--->
-        </ol>
-      </div>
+            {%for burger in burgers%}
+               <li> {{burger[0]}} <span class="price">{{burger[1]}}</span> </li>
+            {% endfor %}
+            <!--
+            <li>Classic Burger <span class="price">$4.99</span></li>
+            <li>Cheese Burger <span class="price">$5.99</span></li>
+            <li>Chicken Burger <span class="price">$5.99</span></li>
+            <li>Double Burger <span class="price">$6.99</span></li>
+  -->
+          </ol>
+        </div>
 
       <div>
         <h2>Drinks</h2>
