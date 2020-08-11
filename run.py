@@ -15,6 +15,7 @@ MENUDB = 'menu.db'
 def fetchMenu(con):
     burgers = []
     free = '0'
+    #cur = con.execute('SELECT burger,price FROM burgers WHERE price>=' + free)
     cur = con.execute('SELECT burger,price FROM burgers WHERE price>=?', (free,))
     for row in cur:
         burgers.append(list(row))
